@@ -728,7 +728,7 @@ properties:
 
   number_of_primary_events:
     description: >
-      Times that the primary disease has been observed (i.e. # primary melanomas)
+      Times that the primary disease has been observed (i.e. number primary melanomas)
     type: integer
 
   perineural_invasion_present:
