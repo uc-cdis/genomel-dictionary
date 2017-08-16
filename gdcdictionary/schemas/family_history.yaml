@@ -64,6 +64,10 @@ properties:
       $ref: "_terms.yaml#/relationship_type"
     type: string
 
+  relationship_case_id:
+    description: "Case ID for this relationship in case the family relative is also part of the study"
+    type: integer
+
   relationship_gender:
     term:
       $ref: "_terms.yaml#/gender"
