@@ -21,6 +21,7 @@
     "morphology": "8255/3",
     "new_event_anatomic_site": "Bone",
     "new_event_type": "Distant Metastasis",
+    "number_of_primary_events": 4,
     "primary_diagnosis": "c34.3",
     "prior_malignancy": "no",
     "progression_or_recurrence": "unknown",
