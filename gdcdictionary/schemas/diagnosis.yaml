@@ -32,19 +32,14 @@ links:
 
 required:
   - age_at_diagnosis
-  - days_to_last_follow_up
-  - vital_status
+  - year_of_diagnosis
   - primary_diagnosis
-  - morphology
   - tissue_or_organ_of_origin
   - site_of_resection_or_biopsy
   - classification_of_tumor
   - tumor_stage
   - tumor_grade
   - progression_or_recurrence
-  - days_to_recurrence
-  - days_to_last_known_disease_status
-  - last_known_disease_status
 
 preferred:
   - days_to_birth
@@ -730,6 +725,11 @@ properties:
       - Unknown
       - Not Reported
       - Not Allowed To Collect
+
+  number_of_primary_events:
+    description: >
+      Times that the primary disease has been observed (i.e. # primary melanomas)
+    type: integer
 
   perineural_invasion_present:
     term:
