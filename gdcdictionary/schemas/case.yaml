@@ -58,6 +58,9 @@ properties:
   family_id:
     description: "Unique identifier to gather several cases from the same family."
     type: string
+  melanoma_status:
+    description: "Boolean value to determine if the case has melanoma."
+    type: boolean
   experiments: 
     $ref: "_definitions.yaml#/to_one"
   project_id:
