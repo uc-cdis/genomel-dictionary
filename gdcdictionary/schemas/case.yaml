@@ -49,12 +49,6 @@ properties:
   submitter_id:
     type:
       - string
-  primary_site:
-    description: "Primary site for the case."
-    type: string
-  disease_type:
-    description: "Name of the disease for the case."
-    type: string
   family_id:
     description: "Unique identifier to gather several cases from the same family."
     type: string
