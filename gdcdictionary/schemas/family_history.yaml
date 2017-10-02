@@ -28,6 +28,11 @@ links:
     multiplicity: many_to_one
     required: true
 
+required:
+  - submitter_id
+  - cases
+  - relationship_type  
+  - relationship_case_id
 
 uniqueKeys:
   #unclear if want submitter ID for clinical
@@ -50,15 +55,6 @@ properties:
       - string
       - "null"
 
-  relative_with_cancer_history:
-    term:
-      $ref: "_terms.yaml#/relative_with_cancer_history"
-    enum:
-      - "yes"
-      - "no"
-      - unknown
-      - not reported
-
   relationship_type:
     term:
       $ref: "_terms.yaml#/relationship_type"
@@ -77,16 +73,6 @@ properties:
       - unknown
       - unspecified
       - not reported
-
-  relationship_age_at_diagnosis:
-    term:
-      $ref: "_terms.yaml#/relationship_age_at_diagnosis"
-    type: number
-
-  relationship_primary_diagnosis:
-    term:
-      $ref: "_terms.yaml#/primary_diagnosis"
-    type: string
 
   cases:
     $ref: "_definitions.yaml#/to_one"
