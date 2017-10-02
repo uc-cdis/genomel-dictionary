@@ -75,6 +75,11 @@ properties:
       Times that the primary disease has been observed (i.e. number primary melanomas)
     type: integer
 
+  number_of_melanomas_in_family:
+    description: >
+      Number of relates diagnosed with melanomas
+    type: integer
+
   year_of_diagnosis:
     term:
       $ref: "_terms.yaml#/year_of_diagnosis"
