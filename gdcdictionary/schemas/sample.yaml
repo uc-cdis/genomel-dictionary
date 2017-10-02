@@ -25,6 +25,7 @@ systemProperties:
   - updated_datetime
 
 required:
+  - type  
   - submitter_id
   - cases
 
@@ -39,12 +40,6 @@ links:
     target_type: case
     multiplicity: many_to_one #not sure
     required: true
-  - name: diagnoses
-    backref: samples
-    label: related_to
-    target_type: diagnosis
-    multiplicity: many_to_one
-    required: false
 
 # Sample properties: keep TCGA-specific fields
 properties:

@@ -30,8 +30,11 @@ links:
     required: true
 
 required:
+  - type
   - submitter_id
   - experiments 
+  - melanoma_status
+  - family_id
 
 uniqueKeys:
   - [id]

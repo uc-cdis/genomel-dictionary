@@ -55,6 +55,7 @@ links:
         required: false
 
 required:
+  - type
   - submitter_id
   - file_name
   - file_size
