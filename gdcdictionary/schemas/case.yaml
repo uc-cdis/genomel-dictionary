@@ -9,7 +9,7 @@ program: '*'
 project: '*'
 description: >
   The collection of all data related to a specific subject in the
-  context of a specific experiment. 
+  context of a specific project. 
 additionalProperties: false
 submittable: true
 validators: null
@@ -22,17 +22,17 @@ systemProperties:
   - state
 
 links:
-  - name: experiments 
+  - name: projects 
     backref: cases
     label: member_of
-    target_type: experiment
+    target_type: project
     multiplicity: many_to_one
     required: true
 
 required:
   - type
   - submitter_id
-  - experiments 
+  - projects 
   - melanoma_status
   - family_id
 
@@ -58,7 +58,7 @@ properties:
   melanoma_status:
     description: "Boolean value to determine if the case has melanoma."
     type: boolean
-  experiments: 
+  projects: 
     $ref: "_definitions.yaml#/to_one"
   project_id:
     $ref: "_definitions.yaml#/project_id"
