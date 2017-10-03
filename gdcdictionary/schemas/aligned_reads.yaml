@@ -23,36 +23,12 @@ systemProperties:
   - error_type
 
 links:
-  - exclusive: true
+  - name: alignment_recalibration_workflows
+    backref: alignd_reads
+    label: data_from
+    target_type: alignment_recalibration_workflow
+    multiplicity: many_to_one
     required: true
-    subgroup:
-      - name: alignment_recalibration_workflows
-        backref: aligned_reads_files
-        label: data_from
-        target_type: alignment_recalibration_workflow
-        multiplicity: many_to_one
-        required: false
-      - name: alignment_workflows
-        backref: aligned_reads_files
-        label: data_from
-        target_type: alignment_workflow
-        multiplicity: many_to_one
-        required: false
-  - exclusive: true
-    required: false
-    subgroup:
-      - name: submitted_unaligned_reads_files
-        backref: aligned_reads_files
-        label: matched_to
-        target_type: submitted_unaligned_reads
-        multiplicity: one_to_many
-        required: false
-      - name: submitted_aligned_reads_files
-        backref: aligned_reads_files
-        label: matched_to
-        target_type: submitted_aligned_reads
-        multiplicity: one_to_one
-        required: false
 
 required:
   - type
