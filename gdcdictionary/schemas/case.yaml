@@ -4,7 +4,7 @@ id: "case"
 title: Case
 type: object
 namespace: http://gdc.nci.nih.gov
-category: administrative
+category: clinical
 program: '*'
 project: '*'
 description: >
@@ -22,19 +22,20 @@ systemProperties:
   - state
 
 links:
-  - name: projects 
+  - name: families 
     backref: cases
     label: member_of
-    target_type: project
+    target_type: family
     multiplicity: many_to_one
     required: true
 
 required:
   - type
   - submitter_id
-  - projects 
+  - families 
   - melanoma_status
-  - family_id
+  - is_proband
+  - relationship_to_proband
 
 uniqueKeys:
   - [id]
@@ -52,13 +53,19 @@ properties:
   submitter_id:
     type:
       - string
-  family_id:
-    description: "Unique identifier to gather several cases from the same family."
+  is_proband:
+    term:
+      $ref: "_terms.yaml#/is_proband"
+    type: boolean
+  relationship_to_proband:
+    term:
+      $ref: "_terms.yaml#/relationship_to_proband"
     type: string
   melanoma_status:
-    description: "Boolean value to determine if the case has melanoma."
+    term:
+      $ref: "_terms.yaml#/melanoma_status"
     type: boolean
-  projects: 
+  families: 
     $ref: "_definitions.yaml#/to_one"
   project_id:
     $ref: "_definitions.yaml#/project_id"
