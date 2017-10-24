@@ -1,0 +1,71 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "family"
+title: Family
+type: object
+namespace: http://gdc.nci.nih.gov
+category: clinical
+program: '*'
+project: '*'
+description: >
+  Collection of all data related to the family members and their relationships.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: projects 
+    backref: families
+    label: member_of
+    target_type: project
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - type
+  - submitter_id
+  - projects
+  - melanomas_in_family
+
+uniqueKeys:
+  #unclear if want submitter ID for clinical
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+  type:
+    enum: [ "family" ]
+
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+
+  state:
+    $ref: "_definitions.yaml#/state"
+
+  submitter_id:
+    type:
+      - string
+      - "null"
+
+  melanomas_in_family:
+    term:
+      $ref: "_terms.yaml#/melanomas_in_family"
+    type:
+      - integer
+
+  projects: 
+    $ref: "_definitions.yaml#/to_one"
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"
