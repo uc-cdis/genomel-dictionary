@@ -71,6 +71,11 @@ properties:
     maximum: 32872
     minimum: 0
 
+  other_diagnosed_cancers:
+    description: >
+      List of other cancers that have been diagnosed to the same patient in a comma-separated string format.
+    type: string
+
   number_of_primary_melanomas:
     description: >
       Times that the primary disease has been observed (i.e. number primary melanomas)
