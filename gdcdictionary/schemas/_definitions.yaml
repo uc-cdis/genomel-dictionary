@@ -204,7 +204,7 @@ workflow_properties:
     description: "Link to Github hash for the CWL workflow used."
     type: string
   workflow_version:
-    description: "Major version for a GDC workflow."
+    description: "Major version for a workflow."
     type: string
   workflow_start_datetime:
     $ref: "#/datetime"

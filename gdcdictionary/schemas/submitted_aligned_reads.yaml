@@ -8,7 +8,7 @@ category: data_file
 program: '*'
 project: '*'
 description: >
-  Data file containing aligned reads that are used as input to GDC workflows.
+  Data file containing aligned reads that are used as input to GenoMEL workflows.
 additionalProperties: false
 submittable: true
 validators: null

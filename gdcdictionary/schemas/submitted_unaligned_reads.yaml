@@ -7,7 +7,7 @@ namespace: http://gdc.nci.nih.gov
 category: data_file
 program: '*'
 project: '*'
-description: "Data file containing unaligned reads that have not been GDC Harmonized."
+description: "Data file containing unaligned reads from sequencing."
 additionalProperties: false
 submittable: true
 validators: null
