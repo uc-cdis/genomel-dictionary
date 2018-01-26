@@ -1,7 +1,20 @@
 language: python
 python:
-  - "2.7"
+- '2.7'
 before_script:
-    - yes | python setup.py install
-    - pip freeze
-script: "nosetests -v"
+- yes | python setup.py install
+- git clone https://github.com/uc-cdis/dictionaryutils; cd dictionaryutils
+script:
+- ./run_tests.sh
+deploy:
+  provider: s3
+  access_key_id: AKIAISDLEGSEW2JHYGVQ
+  secret_access_key:
+    secure: fawI2aK0ppC/DK91uV+PhVEsUiAHCvTafOQicDuS6PFP4uWxnzryPcf96VVOqWiYeogJ8y01RcJtLAx197GL2ES0YKlx91O9cC8hFUqIMk7QVTM6wFrsbd/cC/PwOWMBsm02iJbdfXXIK4mpKvNLWwGEwWqkFKrYOq8vTpwggj02Gauq93YKsIPAZkEEIH0sX29aC4j9g+TU2W+h6N0d89GXl5196A3WIDb+Y1pnu0mXMJkr3P+M0ClIe2bFi7oUaPjLjd6Bof8U0bo3bG9yNfAeB8yLdF4z/YrIA8vT7o+OD20CS8TC1OUsAfoifOPhp8dTdd6cZlCwlcFe1RIIyFEjjyfBoSEUaPCOFKzD8zt4KTl0qUAZbEJV7jESHyGEr07TDjFXRnoShxzFoxhn5uO08M7V/GYFu5yNcjfbFlhGEzvIG01OzRZdSPb3GsAEQClUL+KHpxenoy7Z1GzuQLCK34UIsLPpK7ySJrvYNv7FS6Jep89nanXd563Vgm1kiXbcdVI3z9QZf+b5kAA0/mt2axAIgbkZnZSU6lLwgHrWnUpeWVl3NJ+uEY2wWRFSUMzof+8Dczrq8NpTVrvn9qKQdIdKv3IuL99LUnNtM3Doc8ulKyRI5Bm1sfr5E1Tkip4MmTgAwJwwHj1YvFHw6hPTYLYAbFm+rTAMdKKzvhg=
+  bucket: dictionary-artifacts
+  local-dir: artifacts
+  upload-dir: genomel-dictionary/$TRAVIS_BRANCH
+  skip_cleanup: true
+  on:
+    repo: uc-cdis/genomel-dictionary
+    all_branches: true
