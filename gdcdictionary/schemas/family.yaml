@@ -1,13 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "keyword"
-title: Keyword
+id: "family"
+title: Family
 type: object
 namespace: http://gdc.nci.nih.gov
-category: administrative
+category: clinical
 program: '*'
 project: '*'
-description: "A keyword for a project."
+description: >
+  Collection of all data related to the family members and their relationships.
 additionalProperties: false
 submittable: true
 validators: null
@@ -20,41 +21,54 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: projects
-    backref: keywords
-    label: describe
+  - name: projects 
+    backref: families
+    label: member_of
     target_type: project
-    multiplicity: many_to_many
+    multiplicity: many_to_one
     required: true
 
 required:
+  - type
   - submitter_id
   - projects
+  - melanomas_in_family
 
 uniqueKeys:
-  - [ id ]
-  - [ project_id, submitter_id ]
+  #unclear if want submitter ID for clinical
+  - [id]
+  - [project_id, submitter_id]
 
 properties:
   type:
-    enum: [ "keyword" ]
+    enum: [ "family" ]
+
   id:
     $ref: "_definitions.yaml#/UUID"
     systemAlias: node_id
+
   state:
     $ref: "_definitions.yaml#/state"
+
   submitter_id:
     type:
       - string
       - "null"
-  keyword_name:
-    description: "The name of the keyword."
-    type: string
-  projects:
-    $ref: "_definitions.yaml#/to_many"
+
+  melanomas_in_family:
+    term:
+      $ref: "_terms.yaml#/melanomas_in_family"
+    type:
+      - integer
+
+  projects: 
+    $ref: "_definitions.yaml#/to_one"
+
   project_id:
-    type: string
+    $ref: "_definitions.yaml#/project_id"
+
   created_datetime:
     $ref: "_definitions.yaml#/datetime"
+
   updated_datetime:
     $ref: "_definitions.yaml#/datetime"

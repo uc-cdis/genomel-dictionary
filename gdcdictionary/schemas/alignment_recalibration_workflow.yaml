@@ -1,0 +1,66 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "alignment_recalibration_workflow"
+title: Alignment Recalibration Workflow
+type: object
+namespace: http://gdc.nci.nih.gov
+category: analysis
+program: '*'
+project: '*'
+description: >
+  Metadata for the alignment and recalibration pipeline used to align reads in the GenoMEL workflow
+  pipelines.
+additionalProperties: false
+submittable: false
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - created_datetime
+  - updated_datetime
+  - state
+
+links:
+  - exclusive: true
+    required: true
+    subgroup:
+      - name: submitted_aligned_reads_files
+        backref: alignment_recalibration_workflows
+        label: performed_on
+        target_type: submitted_aligned_reads
+        multiplicity: one_to_many
+        required: false
+      - name: submitted_unaligned_reads_files
+        backref: alignment_recalibration_workflows
+        label: performed_on
+        target_type: submitted_unaligned_reads
+        multiplicity: one_to_many
+        required: false
+
+required:
+  - type
+  - submitter_id
+  - workflow_link
+  - workflow_type
+
+uniqueKeys:
+  - [ id ]
+  - [ project_id, submitter_id ]
+
+properties:
+  $ref: "_definitions.yaml#/workflow_properties"
+  type:
+    enum: [ "alignment_recalibration_workflow" ]
+  workflow_type:
+    term:
+      $ref: "_terms.yaml#/workflow_type"
+    enum: 
+      - "Novoalign + Picard Mark Duplicates + GATK Recalibration"
+      - "Picard Mark Duplicates + GATK Recalibration"
+      - "GATK Recalibration"
+
+  submitted_aligned_reads_files:
+    $ref: "_definitions.yaml#/to_many"
+  submitted_unaligned_reads_files:
+    $ref: "_definitions.yaml#/to_many"

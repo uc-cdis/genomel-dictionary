@@ -7,7 +7,7 @@ namespace: http://gdc.nci.nih.gov
 category: notation
 project: '*'
 program: '*'
-description: "GDC QC run metadata."
+description: "Collection of QC metrics after sequencing."
 additionalProperties: false
 submittable: false
 validators: null

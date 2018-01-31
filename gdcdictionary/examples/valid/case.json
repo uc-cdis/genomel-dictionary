@@ -1,7 +1,10 @@
 {
     "type": "case",
     "submitter_id": "BLGSP-71-06-00019",
-    "experiments": {
-        "id": "daa208a7-f57a-562c-a04a-7a7c77542c98"
+    "melanoma_status": true,
+    "is_proband": false,
+    "relationship_to_proband": "cousin", 
+    "families": {
+        "submitter_id": "family-001"
     }
 }

@@ -4,12 +4,12 @@ id: "case"
 title: Case
 type: object
 namespace: http://gdc.nci.nih.gov
-category: administrative
+category: clinical
 program: '*'
 project: '*'
 description: >
   The collection of all data related to a specific subject in the
-  context of a specific experiment. 
+  context of a specific project. 
 additionalProperties: false
 submittable: true
 validators: null
@@ -22,16 +22,20 @@ systemProperties:
   - state
 
 links:
-  - name: experiments 
+  - name: families 
     backref: cases
     label: member_of
-    target_type: experiment
+    target_type: family
     multiplicity: many_to_one
     required: true
 
 required:
+  - type
   - submitter_id
-  - experiments 
+  - families 
+  - melanoma_status
+  - is_proband
+  - relationship_to_proband
 
 uniqueKeys:
   - [id]
@@ -49,14 +53,19 @@ properties:
   submitter_id:
     type:
       - string
-      - "null"
-  primary_site:
-    description: "Primary site for the case."
+  is_proband:
+    term:
+      $ref: "_terms.yaml#/is_proband"
+    type: boolean
+  relationship_to_proband:
+    term:
+      $ref: "_terms.yaml#/relationship_to_proband"
     type: string
-  disease_type:
-    description: "Name of the disease for the case."
-    type: string
-  experiments: 
+  melanoma_status:
+    term:
+      $ref: "_terms.yaml#/melanoma_status"
+    type: boolean
+  families: 
     $ref: "_definitions.yaml#/to_one"
   project_id:
     $ref: "_definitions.yaml#/project_id"

@@ -883,6 +883,10 @@ is_paired_end: # TOREVIEW
   description: >
     Are the reads paired end?
 
+is_proband: # TOREVIEW
+  description: >
+    Boolean value to determine if the case is the proband.
+
 last_known_disease_status:
   description: >
     Text term that describes the last known state or condition of an individual's neoplasm.
@@ -987,6 +991,14 @@ lymphatic_invasion_present:
     cde_id: 64171
     cde_version: 3.0
     term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=64171&version=3.0"
+
+melanoma_status: # TOREVIEW
+  description: >
+    Boolean value to determine if the case has melanoma.
+
+melanomas_in_family: # TOREVIEW
+  description: >
+    Number of relates diagnosed with melanomas.
 
 method_of_diagnosis:
   description: >
@@ -1377,17 +1389,7 @@ read_group_name: # TOREVIEW
   description: >
     The name of the read group.
 
-relationship_age_at_diagnosis:
-  description: >
-    The age (in years) when the patient's relative was first diagnosed.
-  termDef:
-    term: Relative Diagnosis Age Value
-    source: caDSR
-    cde_id: 5300571
-    cde_version: 1.0
-    term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=5300571&version=1.0"
-
-relationship_type:
+relationship_to_proband:
   description: >
     The subgroup that describes the state of connectedness between members of the unit of society
     organized around kinship ties.

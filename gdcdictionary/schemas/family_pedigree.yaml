@@ -1,14 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "experimental_metadata"
-title: Experimental Metadata
+id: "family_pedigree"
+title: Family Pedigree
 type: object
 namespace: http://gdc.nci.nih.gov
 category: metadata_file
 project: '*'
 program: '*'
 description: >
-  Data file containing the metadata for the experiment performed.
+    Data file containing the pedigree description for the family.
 additionalProperties: false
 submittable: true
 validators: null
@@ -23,11 +23,11 @@ systemProperties:
   - error_type
 
 links:
-  - name: experiments
-    backref: experiment_metadata_files
+  - name: families
+    backref: family_pedigree_files
     label: derived_from
-    target_type: experiment
-    multiplicity: many_to_many
+    target_type: family
+    multiplicity: one_to_one
     required: false
 
 required:
@@ -35,7 +35,6 @@ required:
   - file_name
   - file_size
   - md5sum
-  - data_category
   - data_type
   - data_format
 
@@ -45,21 +44,20 @@ uniqueKeys:
 
 properties:
   $ref: "_definitions.yaml#/data_file_properties"
+
   type:
-    enum: [ "experimental_metadata" ]
-  data_category:
-    term:
-      $ref: "_terms.yaml#/data_category"
-    type:
-      - string
+    enum: [ "family_pedigree" ]
+
   data_type:
     term:
       $ref: "_terms.yaml#/data_type"
-    enum: [ "Experimental Metadata" ]
+    enum: [ "Family Pedigree" ]
+
   data_format:
     term:
       $ref: "_terms.yaml#/data_format"
     type:
       - string
-  experiments:
+
+  families:
     $ref: "_definitions.yaml#/to_one"

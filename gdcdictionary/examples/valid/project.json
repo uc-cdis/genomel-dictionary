@@ -1,9 +1,10 @@
 {
-    "code": "BLGSP",
-    "name": "Burkitt Lymphoma Genome Sequencing Project",
+    "code": "GenoMEL",
+    "name": "Melanoma Genome Sequencing Project",
     "state": "open",
     "type": "project",
+    "dbgap_accession_number": "phs000527",
     "programs": [
-        {"name": "CGCI"}
+        {"name": "GenoMEL"}
     ]
 }
