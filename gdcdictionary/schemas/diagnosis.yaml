@@ -33,9 +33,6 @@ links:
 required:
   - type
   - submitter_id
-  - age_at_diagnosis
-  - year_of_diagnosis
-  - number_of_primary_melanomas
   - cases
 
 preferred:

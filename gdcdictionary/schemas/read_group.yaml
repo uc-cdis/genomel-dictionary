@@ -32,10 +32,6 @@ required:
   - type
   - submitter_id
   - aliquots
-  - experimental_strategy
-  - platform
-  - sequencing_center
-  - sequencing_date
 
 uniqueKeys:
   - [ id ]

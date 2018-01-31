@@ -33,10 +33,6 @@ required:
   - type
   - submitter_id
   - cases
-  - gender
-  - race
-  - ethnicity
-  - year_of_birth
 
 uniqueKeys:
   #unclear if want submitter ID for clinical
