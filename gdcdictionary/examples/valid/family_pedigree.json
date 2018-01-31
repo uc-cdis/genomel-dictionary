@@ -1,0 +1,12 @@
+{
+    "type": "family_pedigree",
+    "submitter_id": "pedigree_001",
+    "file_name": "pedigree.txt",
+    "file_size": 21234,
+    "md5sum": "84a72e8aaad3017348cb3f8459c5d5d9",
+    "data_type": "Family Pedigree",
+    "data_format": "TXT",
+    "families": {
+	   "submitter_id": "family-001"
+    }
+}
