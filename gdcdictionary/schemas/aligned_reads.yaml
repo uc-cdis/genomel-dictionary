@@ -77,9 +77,3 @@ properties:
     $ref: "read_group.yaml#/properties/platform"
   alignment_recalibration_workflows:
     $ref: "_definitions.yaml#/to_one"
-  alignment_workflows:
-    $ref: "_definitions.yaml#/to_one"
-  submitted_unaligned_reads_files:
-    $ref: "_definitions.yaml#/to_many"
-  submitted_aligned_reads_files:
-    $ref: "_definitions.yaml#/to_one"

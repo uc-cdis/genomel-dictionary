@@ -54,9 +54,9 @@ properties:
     term:
       $ref: "_terms.yaml#/data_category"
     enum:
-      - Sequencing Data
-      - Sequencing Reads
-      - Raw Sequencing Data
+      - Raw Sequencing Reads
+      - MarkDuplicated Sequencing Reads
+      - Recalibrated Sequencing Reads
   data_type:
     term:
       $ref: "_terms.yaml#/data_type"
