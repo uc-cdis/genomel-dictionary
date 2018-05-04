@@ -73,6 +73,16 @@ properties:
       - Low Pass WGS
       - Validation
   platform:
-    $ref: "read_group.yaml#/properties/platform"
+    term:
+      $ref: "_terms.yaml#/platform"
+    enum:
+      - Illumina
+      - SOLiD
+      - LS454
+      - Ion Torrent
+      - Complete Genomics
+      - PacBio
+      - Other
+
   alignment_recalibration_workflows:
     $ref: "_definitions.yaml#/to_one"
