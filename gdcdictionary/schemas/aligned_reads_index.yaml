@@ -75,3 +75,4 @@ properties:
     $ref: "_definitions.yaml#/to_one"
   aligned_reads_files:
     $ref: "_definitions.yaml#/to_one"
+

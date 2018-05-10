@@ -670,8 +670,6 @@ properties:
     description: "A description of the tumor from which the sample was derived." # TOREVIEW
   cases:
     $ref: "_definitions.yaml#/to_one"
-  diagnoses:
-    $ref: "_definitions.yaml#/to_one"
   project_id:
     type: string
   created_datetime:
