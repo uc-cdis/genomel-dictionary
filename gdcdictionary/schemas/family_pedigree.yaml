@@ -35,6 +35,7 @@ required:
   - file_name
   - file_size
   - md5sum
+  - data_category
   - data_type
   - data_format
 
@@ -53,6 +54,11 @@ properties:
       $ref: "_terms.yaml#/data_type"
     enum: [ "Family Pedigree" ]
 
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    enum: [ "Family History" ]
+
   data_format:
     term:
       $ref: "_terms.yaml#/data_format"
@@ -61,4 +67,3 @@ properties:
 
   families:
     $ref: "_definitions.yaml#/to_one"
-
