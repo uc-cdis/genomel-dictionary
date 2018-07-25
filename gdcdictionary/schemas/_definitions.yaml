@@ -58,7 +58,7 @@ file_name:
 
 file_size:
     type: integer
-    term: 
+    term:
         $ref: "_terms.yaml#/file_size"
 
 file_format:
@@ -70,6 +70,10 @@ md5sum:
     type: string
     term:
         $ref: "_terms.yaml#/md5sum"
+
+object_id:
+    type: string
+    description: "The GUID of the object in the index service."
 
 release_state:
     description: "Release state of an entity."
@@ -100,7 +104,7 @@ data_file_error_type:
 
 state:
     term:
-        $ref: "_terms.yaml#/state" 
+        $ref: "_terms.yaml#/state"
     default: validated
     downloadable:
         - uploaded
@@ -131,7 +135,7 @@ state:
 
 file_state:
     term:
-        $ref: "_terms.yaml#/file_state" 
+        $ref: "_terms.yaml#/file_state"
     default: registered
     enum:
         - registered
@@ -172,7 +176,7 @@ data_file_properties:
   file_size:
     $ref: "#/file_size"
   md5sum:
-    $ref: "#/md5sum" 
+    $ref: "#/md5sum"
   file_state:
     $ref: "#/file_state"
   state:
@@ -181,7 +185,7 @@ data_file_properties:
     $ref: "#/data_file_error_type"
   state_comment:
     type: string
-    description: > 
+    description: >
       Optional comment about why the file is in the
       current state, mainly for invalid state.
   project_id:
@@ -190,6 +194,9 @@ data_file_properties:
     $ref: "#/datetime"
   updated_datetime:
     $ref: "#/datetime"
+  object_id:
+    $ref: "#/object_id"
+
 
 workflow_properties:
   id:
