@@ -21,7 +21,7 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: projects 
+  - name: projects
     backref: families
     label: member_of
     target_type: project
@@ -55,13 +55,27 @@ properties:
       - string
       - "null"
 
+  cohort_id:
+    description: >
+      The study subgroup that the participant belongs to. This indicates whether the participant was a postmortem donor,
+      an organ donor, or a surgical donor.
+    enum:
+      - Cesena
+      - Valencia
+      - L'Aquila
+      - Padua
+      - Genoa
+      - Barcelona
+      - Milan
+      - Rome
+
   melanomas_in_family:
     term:
       $ref: "_terms.yaml#/melanomas_in_family"
     type:
       - integer
 
-  projects: 
+  projects:
     $ref: "_definitions.yaml#/to_one"
 
   project_id:

@@ -31,7 +31,7 @@ adapter_sequence: # TOREVIEW
 
 age_at_diagnosis:
   description: >
-    Age at the time of diagnosis expressed in number of days since birth.
+    Age at the time of diagnosis expressed in number of years since birth.
   termDef:
     term: Patient Diagnosis Age Day Value
     source: caDSR
@@ -1818,7 +1818,7 @@ year_of_birth:
 
 year_of_diagnosis:
   description: >
-    Numeric value to represent the year of an individual's initial pathologic diagnosis of cancer.
+    Numeric value to represent the year of an individual's initial pathologic diagnosis of melanoma.
   termDef:
     term: Year of initial pathologic diagnosis
     source: caDSR
