@@ -3,7 +3,7 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "core_metadata_collection"
 title: Core Metadata Collection
 type: object
-namespace: https://dcp.bionimbus.org/
+namespace: https://genomel.bionimbus.org/
 category: administrative
 program: '*'
 project: '*'
@@ -38,7 +38,6 @@ required:
   - projects
 
 properties:
-  $ref: "_definitions.yaml#/ubiquitous_properties"
 
   contributor:
     description: >
