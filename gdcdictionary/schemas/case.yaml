@@ -34,8 +34,6 @@ required:
   - submitter_id
   - families 
   - melanoma_status
-  - is_proband
-  - relationship_to_proband
 
 uniqueKeys:
   - [id]
