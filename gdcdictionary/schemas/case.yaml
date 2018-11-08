@@ -33,7 +33,6 @@ required:
   - type
   - submitter_id
   - families 
-  - melanoma_status
 
 uniqueKeys:
   - [id]
