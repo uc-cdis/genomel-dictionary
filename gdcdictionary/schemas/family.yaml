@@ -32,7 +32,6 @@ required:
   - type
   - submitter_id
   - projects
-  - melanomas_in_family
 
 uniqueKeys:
   #unclear if want submitter ID for clinical
