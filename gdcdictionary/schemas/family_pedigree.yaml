@@ -28,7 +28,7 @@ links:
     label: derived_from
     target_type: family
     multiplicity: one_to_one
-    required: false
+    required: true
 
 required:
   - submitter_id
