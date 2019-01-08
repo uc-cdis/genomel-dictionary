@@ -3,7 +3,7 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "aligned_reads"
 title: Aligned Reads
 type: object
-namespace: http://gdc.nci.nih.gov
+namespace: https://genomel.bionimbus.org/
 category: data_file
 program: '*'
 project: '*'
@@ -22,15 +22,23 @@ systemProperties:
   - error_type
 
 links:
-  - name: alignment_recalibration_workflows
-    backref: alignd_reads
-    label: data_from
-    target_type: alignment_recalibration_workflow
-    multiplicity: many_to_one
+  - exclusive: false
     required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: alignd_reads
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: alignment_recalibration_workflows
+        backref: alignd_reads
+        label: data_from
+        target_type: alignment_recalibration_workflow
+        multiplicity: many_to_one
+        required: false
 
 required:
-  - type
   - submitter_id
   - file_name
   - file_size
@@ -47,8 +55,7 @@ uniqueKeys:
 
 properties:
   $ref: "_definitions.yaml#/data_file_properties"
-  type:
-    enum: [ "aligned_reads" ]
+
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
@@ -56,14 +63,17 @@ properties:
       - Sequencing Data
       - Sequencing Reads
       - Raw Sequencing Data
-  data_type:
-    term:
-      $ref: "_terms.yaml#/data_type"
-    enum: [ "Aligned Reads" ]
+
   data_format:
     term:
       $ref: "_terms.yaml#/data_format"
     enum: [ "BAM" ]
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    enum: [ "Aligned Reads" ]
+
   experimental_strategy:
     term:
       $ref: "_terms.yaml#/experimental_strategy"
@@ -72,6 +82,7 @@ properties:
       - WXS
       - Low Pass WGS
       - Validation
+
   platform:
     term:
       $ref: "_terms.yaml#/platform"
@@ -86,3 +97,5 @@ properties:
 
   alignment_recalibration_workflows:
     $ref: "_definitions.yaml#/to_one"
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_many"

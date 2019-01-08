@@ -3,7 +3,7 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "family_pedigree"
 title: Family Pedigree
 type: object
-namespace: http://gdc.nci.nih.gov
+namespace: https://genomel.bionimbus.org/
 category: metadata_file
 project: '*'
 program: '*'
