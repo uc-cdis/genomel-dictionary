@@ -55,6 +55,9 @@ uniqueKeys:
 properties:
   $ref: "_definitions.yaml#/data_file_properties"
 
+  type:
+    enum: [ "submitted_unaligned_reads" ]
+
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
