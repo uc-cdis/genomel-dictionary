@@ -3,7 +3,7 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "alignment_recalibration_workflow"
 title: Alignment Recalibration Workflow
 type: object
-namespace: http://gdc.nci.nih.gov
+namespace: https://genomel.bionimbus.org/
 category: analysis
 program: '*'
 project: '*'
