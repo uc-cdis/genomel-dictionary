@@ -22,9 +22,15 @@ systemProperties:
   - error_type
 
 links:
-  - exclusive: true
+  - exclusive: false
     required: true
     subgroup:
+      - name: core_metadata_collections
+        backref: aligned_reads_indexes
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
       - name: aligned_reads_files
         backref: aligned_reads_indexes
         label: derived_from
