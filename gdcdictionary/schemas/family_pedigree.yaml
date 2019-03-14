@@ -23,12 +23,20 @@ systemProperties:
   - error_type
 
 links:
-  - name: families
-    backref: family_pedigree_files
-    label: derived_from
-    target_type: family
-    multiplicity: one_to_one
-    required: true
+  - exclusive: false
+    required: false
+    subgroup:
+      - name: core_metadata_collections
+        backref: aligned_reads_indexes
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+      - name: families
+        backref: family_pedigree_files
+        label: derived_from
+        target_type: family
+        multiplicity: one_to_one
+      required: true
 
 required:
   - submitter_id
@@ -67,3 +75,6 @@ properties:
 
   families:
     $ref: "_definitions.yaml#/to_one"
+  
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_many"
