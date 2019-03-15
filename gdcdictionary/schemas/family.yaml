@@ -75,7 +75,7 @@ properties:
       - integer
 
   projects:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/to_one_project"
 
   project_id:
     $ref: "_definitions.yaml#/project_id"

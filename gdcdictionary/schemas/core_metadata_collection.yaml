@@ -124,7 +124,7 @@ properties:
     type: string
 
   projects:
-    $ref: "_definitions.yaml#/to_one"
+    $ref: "_definitions.yaml#/to_one_project"
 
   created_datetime:
     $ref: "_definitions.yaml#/datetime"
