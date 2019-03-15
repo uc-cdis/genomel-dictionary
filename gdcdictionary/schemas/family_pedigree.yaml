@@ -24,19 +24,20 @@ systemProperties:
 
 links:
   - exclusive: false
-    required: false
+    required: true
     subgroup:
       - name: core_metadata_collections
         backref: family_pedigree_files
         label: data_from
         target_type: core_metadata_collection
         multiplicity: many_to_one
+        required: false
       - name: families
         backref: family_pedigree_files
         label: derived_from
         target_type: family
         multiplicity: one_to_one
-        required: true
+        required: false
 
 required:
   - submitter_id
