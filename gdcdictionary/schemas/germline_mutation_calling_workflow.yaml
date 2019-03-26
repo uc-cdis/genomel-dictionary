@@ -60,6 +60,7 @@ properties:
       - "FreeBayes"
       - "Unified Genotyper"
       - "HC+FB+UG Ensemble"
+      - "GATK4"
   aligned_reads_files:
     $ref: "_definitions.yaml#/to_many"
   submitted_aligned_reads_files:
