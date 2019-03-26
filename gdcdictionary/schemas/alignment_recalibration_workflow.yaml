@@ -59,6 +59,7 @@ properties:
       - "Novoalign + Picard Mark Duplicates + GATK Recalibration"
       - "Picard Mark Duplicates + GATK Recalibration"
       - "GATK Recalibration"
+      - "BWA + Picard Mark Duplicates"
 
   submitted_aligned_reads_files:
     $ref: "_definitions.yaml#/to_many"
