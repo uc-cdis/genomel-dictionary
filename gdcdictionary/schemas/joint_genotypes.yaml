@@ -1,1 +1,91 @@
+$schema: "http://json-schema.org/draft-04/schema#"
 
+id: "joint_genotypes"
+title: Joint Genotype Files
+type: object
+namespace: https://genomel.bionimbus.org/
+category: data_file
+program: '*'
+project: '*'
+description: >
+  Data file containing joint genotypes called from aligned reads.
+additionalProperties: false
+submittable: false
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - created_datetime
+  - updated_datetime
+  - state
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: simple_germline_variations
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: germline_joint_calling
+        backref: simple_germline_variations
+        label: data_from
+        target_type: germline_joint_calling
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - file_name
+  - file_size
+  - md5sum
+  - data_category
+  - data_type
+  - data_format
+  - experimental_strategy
+  - type
+
+uniqueKeys:
+  - [ id ]
+  - [ project_id, submitter_id ]
+
+properties:
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  type:
+    enum: [ "joint_genotypes" ]
+
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    enum: [ "Joint Genotyping" ]
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    enum: [ "VCF" ]
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    enum: [ "Joint Genotypes" ]
+
+  experimental_strategy:
+    term:
+      $ref: "_terms.yaml#/experimental_strategy"
+    enum:
+      - WGS
+      - WXS
+      - Low Pass WGS
+      - Validation
+
+
+  germline_joint_calling.yaml:
+    $ref: "_definitions.yaml#/to_many"
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_many"
