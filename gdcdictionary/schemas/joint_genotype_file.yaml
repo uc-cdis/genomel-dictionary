@@ -85,7 +85,7 @@ properties:
       - Validation
 
 
-  germline_joint_calling.yaml:
+  joint_germline_calling_workflow:
     $ref: "_definitions.yaml#/to_many"
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_many"
