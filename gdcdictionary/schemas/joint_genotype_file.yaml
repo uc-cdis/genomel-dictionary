@@ -32,10 +32,10 @@ links:
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: joint_germline_calling_workflow
+      - name: joint_germline_calling_workflows
         backref: joint_genotype_files
         label: data_from
-        target_type: germline_joint_calling
+        target_type: joint_germline_calling_workflow
         multiplicity: many_to_one
         required: false
 
