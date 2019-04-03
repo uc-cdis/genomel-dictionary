@@ -3,7 +3,7 @@ $schema: "http://json-schema.org/draft-04/schema#"
 id: "joint_genotypes"
 title: Joint Genotype Files
 type: object
-namespace: https://genomel.bionimbus.org/
+namespace: https://acct.bionimbus.org
 category: data_file
 program: '*'
 project: '*'
